@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Cart</title>
+
+    <!-- CSS Library  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container mx-auto">
+
+        <!-- Navbar -->
+        <div class="navbar bg-base-100 shadow-sm px-20 flex justify-between">
+            <div>
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow ">
+                        <li class="font-semibold hover:text-indigo-700"><a>Home</a></li>
+                        <li class="font-semibold hover:text-indigo-700"><a>Products</a></li>
+                        <li class="font-semibold hover:text-indigo-700"><a>About</a></li>
+                        <li class="font-semibold hover:text-indigo-700"><a>Contact</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-2xl font-bold text-indigo-700">Swift Cart</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-lg">
+                    <li class="font-semibold hover:text-indigo-700"><a>Home</a></li>
+                    <li class="font-semibold hover:text-indigo-700"><a>Products</a></li>
+                    <li class="font-semibold hover:text-indigo-700"><a>About</a></li>
+                    <li class="font-semibold hover:text-indigo-700"><a>Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="dropdown dropdown-end ">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <div class="indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span class="badge badge-sm indicator-item ">8</span>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                        <div class="card-body">
+                            <span class="text-lg font-bold">8 Items</span>
+                            <span class="text-info">Subtotal: $999</span>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-block">View cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero with Overlay Image -->
+    <div class="hero min-h-screen" style="background-image: url(Assets/banner_bg.jpg);">
+        <div class="hero-overlay bg-gradient-to-r from-black to-transparent"></div>
+        <div class=" text-white w-5/6">
+            <div class="space-y-6">
+                <h1 class="text-5xl font-bold">Best Collection For You</h1>
+                <p class="">
+                    Discover the latest trends in fashion, electronics, and more. Shop with <br> confidence and style at
+                    Swift Cart!
+                </p>
+                <button class="btn btn-primary">Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section class="bg-slate-100">
+        <div class="text-center space-y-4 py-20 max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold">Why Choose Us</h1>
+            <p class="text-xl opacity-70">We Provide the best shopping experience with top-notch services.</p>
+
+            <div class="mt-20 flex gap-6 items-center justify-center ">
+                <!-- card-1 -->
+                <div class="shadow-md rounded-lg w-3/12 h-[180px] px-6 pb-6 text-left bg-white">
+
+                    <!-- Icon -->
+                    <div class="relative -top-5 border-3 bg-indigo-600/10 rounded-md  border-white shadow-xl flex items-center
+                    justify-center mb-4 py-[3px] w-10">
+                        <i class="fa-regular fa-truck text-indigo-600  inline-block text-2xl"></i>
+                    </div>
+
+                    <h2 class="text-lg font-semibold">Fast Delivery</h2>
+                    <p>
+                        Get your orders delivered to your doorstep quickly and efficiently.
+                    </p>
+                </div>
+
+                <!-- card-2 -->
+                <div class="shadow-md rounded-lg w-3/12 h-[180px] px-6 pb-6 text-left bg-white">
+
+                    <!-- Icon -->
+                    <div class="relative -top-5 border-3 bg-indigo-600/10 rounded-md  border-white shadow-xl flex items-center
+                    justify-center mb-4 py-[3px] w-10">
+                        <i class="fa-solid fa-headset text-indigo-600  inline-block text-2xl"></i>
+                    </div>
+
+                    <h2 class="text-lg font-semibold">24/7 Support</h2>
+                    <p>
+                        Our support team is available around the clock to assist you.
+                    </p>
+                </div>
+                <!-- card-3 -->
+                <div class="shadow-md rounded-lg w-3/12 h-[180px] px-6 pb-6 text-left bg-white">
+
+                    <!-- Icon -->
+                    <div class="relative -top-5 border-3 bg-indigo-600/10 rounded-md  border-white shadow-xl flex items-center
+                    justify-center mb-4 py-[3px] w-10">
+                        <i class="fa-solid fa-shield-halved text-indigo-600  inline-block text-2xl"></i>
+                    </div>
+
+                    <h2 class="text-lg font-semibold">Secure Payment</h2>
+                    <p>
+                        Experience safe and secure transactions with our trusted payment gateways.
+                    </p>
+                </div>
+                <!-- card-4 -->
+                <div class="shadow-md rounded-lg w-3/12 h-[180px] px-6 pb-6 text-left bg-white">
+
+                    <!-- Icon -->
+                    <div class="relative -top-5 border-3 bg-indigo-600/10 rounded-md  border-white shadow-xl flex items-center
+                    justify-center mb-4 py-[3px] w-10">
+                        <i class="fa-solid fa-arrows-rotate text-indigo-600  inline-block text-2xl"></i>
+                    </div>
+
+                    <h2 class="text-lg font-semibold">Easy Returns</h2>
+                    <p>
+                        Not satisfied? Return your products hassle-free with our easy return policy.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Js Files -->
+    <script src="script.js"></script>
+</body>
+
+</html>
