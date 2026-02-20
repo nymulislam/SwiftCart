@@ -1,30 +1,10 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT (SwiftCart E-Commerce)
+## WELCOME TO (SwiftCart E-Commerce)
 
 
-## Repository: Create your own public repository and submit the link.
 
 ---
 ## 🛍️ API Endpoints
 ---
-1. Get 🛍️ All Products
-```bash
-https://fakestoreapi.com/products
-```
-
-2. Get 🛍️ All Categories
-```bash
-https://fakestoreapi.com/products/categories
-```
-
-3. Get 🛍️ Products by Category
-```bash
-https://fakestoreapi.com/products/category/${category}
-```
-
-Example:
-```bash
-https://fakestoreapi.com/products/category/jewelery
-```
 
 4. Get 🛍️ Single Product Detail
 ```bash
@@ -84,9 +64,6 @@ https://fakestoreapi.com/products/1
 1) Category Loading
 Load Product Categories dynamically on the UI (e.g., as filter buttons or a dropdown).
 
-2) Category Click → Product Data
-On clicking a category: load products of that specific category.
-Display in a grid layout (e.g., 3 or 4 columns).
 
 3) Card Contents
 Each product card must include:
@@ -122,22 +99,6 @@ Clicking the "Details" button on a card opens a modal with full product details:
     4) Loading Spinner
     Show a loading spinner or skeleton loader while fetching data from the API.
 
-    5) Active State
-    Highlight the currently selected category button.
-
-🧰 Technology Stack:
-    HTML
-    CSS (Vanilla / Tailwind / DaisyUI)
-    JavaScript (Vanilla only, no frameworks like React/Vue for this assignment)
-
-📌 Rules
-✅ At least 5 meaningful commits
-❌ No dummy text where real data can be shown.
-
 ## 🔗 Submission
 - **Live Link :** YOUR_DEPLOYED_URL_HERE
 - **GitHub Repository:** YOUR_REPO_URL_HERE
-
-
-### 📅 Deadline For 60 marks: 17th February, 2026 (11:59 pm ⏱️)
-- Note: There won't be any 50 or 30 marks submission deadline. Only 60 marks submission deadline. After 17th February, 2026 (11:59 pm ⏱️) no submission will be accepted.
