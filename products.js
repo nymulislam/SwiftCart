@@ -11,7 +11,7 @@ const loadProducts = () => {
     const url = `https://fakestoreapi.com/products`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayProducts(data))
+        .then(data => displayProducts(data, "products-container"))
 }
 
 // Load Products by category
@@ -19,57 +19,69 @@ const loadProductsByCategory = (category) => {
     const url = `https://fakestoreapi.com/products/category/${category}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayProducts(data));
+        .then(data => displayProducts(data, "products-container"));
+}
+
+// Trending Products
+const trendingProduct = () => {
+    const url = `https://fakestoreapi.com/products`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const trending = [...data]
+                .sort((a, b) => b.rating.rate - a.rating.rate)
+                .slice(0, 3);
+            displayProducts(trending, "trending-container")
+        })
 }
 
 // Category Display
 const displayCategory = (categories) => {
+
     categories.unshift("All")
 
-    const btnContainer = document.getElementById("btn-container").addEventListener("click", function (e) {
-        if (e.target.classList.contains("btn")) {
+    const btnContainer = document.getElementById("btn-container");
 
-            document.querySelectorAll("#category-btn").forEach(btn => btn.classList.add("btn-soft"))
-
-            e.target.classList.remove("btn-soft");
-        }
-
-        e.target.innerText === "All" ? loadProducts() : loadProductsByCategory(e.target.innerText)
-    });
-
-    for (const category of categories) {
+    for (const [index, category] of categories.entries()) {
         const btnDiv = document.createElement("div");
-        btnDiv.innerHTML = `
-        
-        <button id="category-btn" class="btn btn-soft btn-primary rounded-full">${category}</button>
-        `
 
+        btnDiv.innerHTML = `
+        <button class="category-btn btn ${index === 0 ? "btn-primary" : "btn-soft btn-primary"}   rounded-full">${category}</button>
+        `
         btnContainer.append(btnDiv)
     }
 
-    // First btn active by default
-    const firstBtn = document.getElementById("category-btn")
-    firstBtn.classList.remove("btn-soft");
+    btnContainer.addEventListener("click", function (e) {
+
+        const clickedBtn = e.target.closest(".category-btn");
+
+        if (!clickedBtn) return;
+
+        document.querySelectorAll(".category-btn").forEach(btn => btn.classList.add("btn-soft"))
+
+        clickedBtn.classList.remove("btn-soft");
+
+        const category = clickedBtn.innerText;
+
+        category === "All" ? loadProducts() : loadProductsByCategory(category)
+
+    });
 
 }
 
-
-
-
-
 // All Products Display
+const displayProducts = (products, containerId) => {
+    const productsContainer = document.getElementById(containerId)
 
-const displayProducts = (products) => {
-    const productsContainer = document.getElementById("products-container");
     productsContainer.innerHTML = "";
 
-    products.forEach(product => {
+    products.forEach((product) => {
         const productDiv = document.createElement("div");
 
         productDiv.innerHTML = `
-        <div class="card bg-base-100 shadow-sm h-96 ">
-        <figure class="bg-gray-400/15 py-2">
-        <img class="w-32 h-36 " src="${product.image}" />
+        <div class="card bg-base-100 shadow-sm h-96">
+        <figure class="bg-gray-400/15">
+        <img class="w-36 h-40 py-4" src="${product.image}" />
                 </figure>
                 <div class="card-body">
                 <div class="flex justify-between items-center">
@@ -85,7 +97,7 @@ const displayProducts = (products) => {
                 <h2 class="card-title">${product.title.length > 38 ? product.title.slice(0, 38) + "..." : product.title}</h2>
                 <h2 class="text-2xl font-bold">$${product.price}</h2>
                 <div class="flex justify-between gap-10 mt-5">
-                <button class="btn btn-gost flex-grow"><i class="fa-regular fa-eye"></i>Details</button>
+                <button class="btn btn-ghost flex-grow"><i class="fa-regular fa-eye"></i>Details</button>
                 <button class="btn btn-primary flex-grow"><i class="fa-solid fa-cart-plus"></i>Add</button>
                 </div>
                 
@@ -100,4 +112,4 @@ const displayProducts = (products) => {
 
 loadCategories()
 loadProducts()
-displayProducts();
+trendingProduct()

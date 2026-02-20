@@ -11,35 +11,13 @@
 https://fakestoreapi.com/products/${id}
 ```
 
-Example:
-```bash
-https://fakestoreapi.com/products/1
-```
-
 ---
 
 ## 🎯 Project Specifications (UI/UX)
 
 #### 1) Navbar
-- Website **logo/name** ("SwiftCart") on the **left**
-- **Menu items** (Home, Products, About, Contact) in the **center**
 - **Cart Icon/Button** on the **right** (showing item count is a bonus)
 
-#### 2) Banner / Hero Section
-- A **background image** (related to shopping/fashion/electronics)
-- A **title** (e.g., "Best Collection For You") and **subtitle**
-- A **centered button** (e.g., "Shop Now")
-
-#### 3) Features / Why Choose Us
-- **Section heading**
-- **3-4 items** highlighting features like "Fast Delivery", "24/7 Support", "Secure Payment", etc. (Icon + Title + Short Text)
-
-#### 4) Trending / Top Rated Section
-- Show **3 top-rated products** (you can filter by rating or just pick the first 3) based on API data or hardcoded for layout practice.
-
-#### 5) Newsletter & Footer
-- **Newsletter Subscription Form**: Email input + Subscribe button.
-- **Footer** with copyright info, social links, and quick links.
 
 #### 6) Responsiveness
 - Website must be **mobile responsive** 
