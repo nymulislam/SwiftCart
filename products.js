@@ -35,6 +35,8 @@ const trendingProduct = () => {
         })
 }
 
+
+
 // Category Display
 const displayCategory = (categories) => {
 
@@ -69,6 +71,35 @@ const displayCategory = (categories) => {
 
 }
 
+// Modal Open
+const modal = document.getElementById("my_modal_5")
+document.addEventListener('click', function (e) {
+
+    const btn = e.target.closest(".detail-btn")
+    if (!btn) return;
+
+    const img = btn.dataset.image
+    const category = btn.dataset.category
+    const rating = btn.dataset.rating
+    const count = btn.dataset.count
+    const title = btn.dataset.title
+    const description = btn.dataset.description;
+
+
+    console.log(count, title, description)
+
+    modal.showModal();
+
+    document.getElementById("modal-img").src = img;
+    document.getElementById("modal-category").innerText = category;
+    document.getElementById("modal-rating").innerText = rating;
+    document.getElementById("modal-product-count").innerText = `(${count})`;
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-description").innerText = description;
+
+})
+
+
 // All Products Display
 const displayProducts = (products, containerId) => {
     const productsContainer = document.getElementById(containerId)
@@ -97,8 +128,16 @@ const displayProducts = (products, containerId) => {
                 <h2 class="card-title">${product.title.length > 38 ? product.title.slice(0, 38) + "..." : product.title}</h2>
                 <h2 class="text-2xl font-bold">$${product.price}</h2>
                 <div class="flex justify-between gap-10 mt-5">
-                <button class="btn btn-ghost flex-grow"><i class="fa-regular fa-eye"></i>Details</button>
-                <button class="btn btn-primary flex-grow"><i class="fa-solid fa-cart-plus"></i>Add</button>
+                <button class="btn btn-ghost flex-grow detail-btn"
+                data-image = "${product.image}"
+                data-category = "${product.category}"
+                data-rating = "${product.rating.rate}"
+                data-count = "${product.rating.count}"
+                data-title = "${product.title}"
+                data-description = "${product.description}"
+                ><i class="fa-regular fa-eye"
+                ></i>Details</button>
+                <button class="btn btn-primary flex-grow" ><i class="fa-solid fa-cart-plus"></i>Add</button>
                 </div>
                 
                 </div>
