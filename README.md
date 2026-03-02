@@ -1,31 +1,7 @@
 ## WELCOME TO (SwiftCart E-Commerce)
 
-
-
----
-## 🛍️ API Endpoints
----
-
-4. Get 🛍️ Single Product Detail
-```bash
-https://fakestoreapi.com/products/${id}
-```
-
----
-
-## 🎯 Project Specifications (UI/UX)
-
-#### 1) Navbar
-- **Cart Icon/Button** on the **right** (showing item count is a bonus)
-
-
-#### 6) Responsiveness
-- Website must be **mobile responsive** 
-
 ---
 #### 7) Create a README file to answer the following questions-
-
-> **⚠️ Warning:** Do not use any AI tools to answer these questions. You must write the answers in **Bangla**.
 
 #### 1) What is the difference between `null` and `undefined`?
 
@@ -39,26 +15,6 @@ https://fakestoreapi.com/products/${id}
 
 ## ⚡ Dynamic Features & Functionalities
 
-1) Category Loading
-Load Product Categories dynamically on the UI (e.g., as filter buttons or a dropdown).
-
-
-3) Card Contents
-Each product card must include:
-- **Image** (from API)
-- **Title** (truncated if too long)
-- **Price** ($ value)
-- **Category** (badge or text)
-- **Rating** (Visualize stars or just show the number)
-- **Details Button**
-- **Add to Cart button**
-
-4) Modal on "Details" Click
-Clicking the "Details" button on a card opens a modal with full product details:
-- Full Title
-- Full Description
-- Price & Rating
-- "Buy Now" or "Add to Cart" button in modal.
 
 ## 🧪 Challenges (Optional)
 
